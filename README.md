@@ -1,4 +1,4 @@
-# Edge-labeling Graph Neural Network for one-shot learning  
+# Edge-labeling Graph Neural Network for one-shot learning (WIP)
 
 This is a challenge submission for 
 [fellowship.ai](https://fellowship.ai) cohort 15.
