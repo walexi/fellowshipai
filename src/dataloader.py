@@ -152,7 +152,8 @@ class Loader(data.Dataset):
                 for i_idx in range(num_shots):
                     # set data
                     print(i_idx)
-                    print(class_data_list[i_idx])
+                    print(t_idx)
+                    print(support_data[i_idx][t_idx])
                     support_data[i_idx + c_idx * num_shots][t_idx] = self.transform(class_data_list[i_idx])
                     support_label[i_idx + c_idx * num_shots][t_idx] = c_idx
 
