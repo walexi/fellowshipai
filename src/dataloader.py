@@ -24,7 +24,7 @@ class Loader(data.Dataset):
         # set dataset information
         self.root = root
         self.partition = partition
-        self.data_size = [3, 84, 84]
+        self.data_size = [1, 84, 84]
 
         # set normalizer
         mean_pix = [x / 255.0 for x in [120.39586422, 115.59361427, 104.54012653]]
