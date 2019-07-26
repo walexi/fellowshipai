@@ -84,7 +84,7 @@ class Loader(data.Dataset):
         return X,y,lang_dict
 
         #
-    def _save_to_pickle():
+    def _save_to_pickle(self):
 
         X,y,c=_loadimgs(self.root + '/' + self.partition)
 
