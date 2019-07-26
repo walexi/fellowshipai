@@ -17,19 +17,6 @@ import argparse
 """Script to preprocess the omniglot dataset and pickle it into an array that's easy
     to index my character type"""
 
-parser = argparse.ArgumentParser()
-parser.add_argument("--path",help="Path where omniglot folder resides")
-parser.add_argument("--save", help = "Path to pickle data to.", default=os.getcwd())
-args = parser.parse_args()
-data_path = os.path.join(args.path, "python")
-train_folder = os.path.join(data_path,'images_background')
-valpath = os.path.join(data_path,'images_evaluation')
-
-save_path = args.save
-
-lang_dict = {}
-
-
 
 class Loader(data.Dataset):
     def __init__(self, root, partition='omniglot_background'):
