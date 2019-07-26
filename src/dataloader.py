@@ -72,7 +72,7 @@ class Loader(data.Dataset):
                     category_images.append(image)
 
                 data_dict[alphabet] = category_images
-                print("Total number of images in "+alphabet+" is: " + str(sum))
+            print("Total number of images in "+alphabet+" is: " + str(sum))
         return data_dict
 
         #
