@@ -52,45 +52,36 @@ class Loader(data.Dataset):
             print("unzipping")
             os.chdir(data_path)
             os.system("unzip {}".format(path+".zip" ))
-        X=[]
-        y = []
-        cat_dict = {}
-        lang_dict = {}
-        curr_y = 0
+
+        data_dict = {}
         #we load every alphabet seperately so we can isolate them later
         for alphabet in os.listdir(path):
             print("loading alphabet: " + alphabet)
-            lang_dict[alphabet] = [curr_y,None]
+            print("Total number of alphabet: " + len(os.listdir(path)))
             alphabet_path = os.path.join(path,alphabet)
+            print("Total number of character sets in "+alphabet+" is "+ len(os.path.listdir(alphabet_path)))
             #every letter/category has it's own column in the array, so  load seperately
-            for letter in os.listdir(alphabet_path):
-                cat_dict[curr_y] = (alphabet, letter)
+            sum = 0;
+            for character in os.listdir(alphabet_path):
                 category_images=[]
                 letter_path = os.path.join(alphabet_path, letter)
+                sum += len(os.listdir(letter_path))
                 for filename in os.listdir(letter_path):
                     image_path = os.path.join(letter_path, filename)
                     image = imread(image_path)
                     category_images.append(image)
-                    y.append(curr_y)
-                try:
-                    X.append(np.stack(category_images))
-                #edge case  - last one
-                except ValueError as e:
-                    print(e)
-                    print("error - category_images:", category_images)
-                curr_y += 1
-                lang_dict[alphabet][1] = curr_y - 1
-        y = np.vstack(y)
-        X = np.stack(X)
-        return X,y,lang_dict
+
+                data_dict[alphabet] = category_images
+                print("Total number of images in "+alphabet+" is: "sum)
+        return data_dict
 
         #
     def _save_to_pickle(self):
 
-        X,y,c=self._loadimgs()
+        data=self._loadimgs()
 
         with open(os.path.join(self.root, self.partition + '.pickle'), "wb") as f:
-            pickle.dump((X,c),f)
+            pickle.dump(data,f)
 
     def load_dataset(self):
         # load data
