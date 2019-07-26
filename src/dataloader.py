@@ -10,7 +10,7 @@ from itertools import islice
 from torchvision import transforms
 import sys
 import numpy as np
-from scipy.imageio import imread
+from imageio import imread
 import matplotlib.pyplot as plt
 import argparse
 
