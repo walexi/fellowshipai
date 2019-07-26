@@ -2,7 +2,7 @@ import os
 import datetime
 import time
 import pathlib
-from ../ import torch, nn, tt
+from ... import torch, nn, tt
 
 __author__ = 'namju.kim@kakaobrain.com'
 
