@@ -28,7 +28,7 @@ class Loader(data.Dataset):
 
         # set normalizer
         # mean_pix = [x / 255.0 for x in [120.39586422, 115.59361427, 104.54012653]]
-        mean_pix 120.39586422/255.0
+        mean_pix = 120.39586422/255.0
         # std_pix = [x / 255.0 for x in [70.68188272, 68.27635443, 72.54505529]]
         std_pix = 70.68188272/255.0
         normalize = transforms.Normalize(mean=mean_pix, std=std_pix)
