@@ -3,7 +3,7 @@
 from .torchtools import *
 from collections import OrderedDict
 import math
-#import seaborn as sns
+import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -303,10 +303,10 @@ class GraphNetwork(nn.Module):
             # save edge feature
             edge_feat_list.append(edge_feat)
 
-        # if tt.arg.visualization:
-        #     for l in range(self.num_layers):
-        #         ax = sns.heatmap(tt.nvar(edge_feat_list[l][0, 0, :, :]), xticklabels=False, yticklabels=False, linewidth=0.1,  cmap="coolwarm",  cbar=False, square=True)
-        #         ax.get_figure().savefig('./visualization/edge_feat_layer{}.png'.format(l))
+        if tt.arg.visualization:
+            for l in range(self.num_layers):
+                ax = sns.heatmap(tt.nvar(edge_feat_list[l][0, 0, :, :]), xticklabels=False, yticklabels=False, linewidth=0.1,  cmap="coolwarm",  cbar=False, square=True)
+                ax.get_figure().savefig('./visualization/edge_feat_layer{}.png'.format(l))
 
 
         return edge_feat_list
