@@ -64,7 +64,7 @@ class Loader(data.Dataset):
             sum = 0;
             for character in os.listdir(alphabet_path):
                 category_images=[]
-                letter_path = os.path.join(alphabet_path, letter)
+                letter_path = os.path.join(alphabet_path, character)
                 sum += len(os.listdir(letter_path))
                 for filename in os.listdir(letter_path):
                     image_path = os.path.join(letter_path, filename)
