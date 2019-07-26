@@ -45,7 +45,7 @@ class Loader(data.Dataset):
         # load data
         self.data = self.load_dataset()
 
-    def _loadimgs(self,n=0):
+    def _loadimgs(self):
     #if data not already unzipped, unzip it.
         path = self.root + '/' + self.partition
         if not os.path.exists(path):
@@ -56,7 +56,7 @@ class Loader(data.Dataset):
         y = []
         cat_dict = {}
         lang_dict = {}
-        curr_y = n
+        curr_y = 0
         #we load every alphabet seperately so we can isolate them later
         for alphabet in os.listdir(path):
             print("loading alphabet: " + alphabet)
