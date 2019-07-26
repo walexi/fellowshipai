@@ -97,24 +97,24 @@ def _parse_opts():
 
     # get command line arguments
     arg = _Opt()
-    argv = sys.argv[1:]
+    # argv = sys.argv[1:]
 
-    # check length
-    assert len(argv) % 2 == 0, 'arguments should be paired with the format of --key value'
+    # # check length
+    # assert len(argv) % 2 == 0, 'arguments should be paired with the format of --key value'
 
-    # parse args
-    for i in range(0, len(argv), 2):
+    # # parse args
+    # for i in range(0, len(argv), 2):
 
-        # check format
-        assert argv[i].startswith('--'), 'arguments should be paired with the format of --key value'
+    #     # check format
+    #     assert argv[i].startswith('--'), 'arguments should be paired with the format of --key value'
 
-        # save argument
-        arg[argv[i][2:]] = _to_py_obj(argv[i + 1])
+    #     # save argument
+    #     arg[argv[i][2:]] = _to_py_obj(argv[i + 1])
 
-        # check config file
-        if argv[i][2:].lower() == 'config':
-            _parse_config(arg, argv[i + 1])
-            _config_time_stamp = os.stat(argv[i + 1]).st_mtime
+    #     # check config file
+    #     if argv[i][2:].lower() == 'config':
+    #         _parse_config(arg, argv[i + 1])
+    #         _config_time_stamp = os.stat(argv[i + 1]).st_mtime
 
     #
     # inject default options
