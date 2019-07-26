@@ -1,9 +1,9 @@
-from torchtools.tt.arg import _parse_opts
-from torchtools.tt.utils import *
-from torchtools.tt.layer import *
-from torchtools.tt.logger import *
-from torchtools.tt.stat import *
-from torchtools.tt.trainer import *
+from .arg import _parse_opts
+from .utils import *
+from .layer import *
+from .logger import *
+from .stat import *
+from .trainer import *
 
 
 __author__ = 'namju.kim@kakaobrain.com'

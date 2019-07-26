@@ -7,7 +7,7 @@ from torch import utils
 from torch.nn import functional as F
 from torch.utils.data import *
 from torch.distributions import *
-from torchtools import tt
+from . import tt
 
 
 __author__ = 'namju.kim@kakaobrain.com'
