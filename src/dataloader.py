@@ -8,16 +8,12 @@ from PIL import Image as pil_image
 import pickle
 from itertools import islice
 from torchvision import transforms
-
-
-
 import sys
 import numpy as np
-from scipy.misc.pilutil import imread
-import pickle
-import os
+from scipy.imageio import imread
 import matplotlib.pyplot as plt
 import argparse
+
 """Script to preprocess the omniglot dataset and pickle it into an array that's easy
     to index my character type"""
 
