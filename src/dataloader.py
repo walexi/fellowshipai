@@ -36,7 +36,7 @@ class Loader(data.Dataset):
         # load data
         self.data = self.load_dataset()
 
-    def load_data(self):
+    def load_dataset(self):
         # load data
         dataset_path = os.path.join(self.root, 'mini-imagenet/compacted_datasets', 'mini_imagenet_%s.pickle' % self.partition)
         with open(dataset_path, 'rb') as handle:
