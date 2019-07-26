@@ -45,8 +45,9 @@ class Loader(data.Dataset):
         # load data
         self.data = self.load_dataset()
 
-    def _loadimgs(path,n=0):
+    def _loadimgs(self,n=0):
     #if data not already unzipped, unzip it.
+        path = self.root + '/' + self.partition
         if not os.path.exists(path):
             print("unzipping")
             os.chdir(data_path)
@@ -86,7 +87,7 @@ class Loader(data.Dataset):
         #
     def _save_to_pickle(self):
 
-        X,y,c=_loadimgs(self.root + '/' + self.partition)
+        X,y,c=self._loadimgs(self.root + '/' + self.partition)
 
         with open(os.path.join(self.root, self.partition + '.pickle'), "wb") as f:
             pickle.dump((X,c),f)
