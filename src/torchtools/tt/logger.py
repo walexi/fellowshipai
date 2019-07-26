@@ -1,7 +1,7 @@
 import datetime
 import time
 from tensorboardX import SummaryWriter
-from torchtools import tt
+from .. import tt
 
 
 __author__ = 'namju.kim@kakaobrain.com'

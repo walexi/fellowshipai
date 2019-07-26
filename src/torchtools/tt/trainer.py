@@ -1,4 +1,4 @@
-from torchtools import nn, optim, tt
+from .. import nn, optim, tt
 
 
 __author__ = 'namju.kim@kakaobrain.com'

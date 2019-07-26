@@ -1,4 +1,4 @@
-from torchtools import nn
+from .. import nn
 
 
 #
