@@ -87,7 +87,7 @@ class Loader(data.Dataset):
         #
     def _save_to_pickle(self):
 
-        X,y,c=self._loadimgs(self.root + '/' + self.partition)
+        X,y,c=self._loadimgs()
 
         with open(os.path.join(self.root, self.partition + '.pickle'), "wb") as f:
             pickle.dump((X,c),f)
