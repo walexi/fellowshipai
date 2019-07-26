@@ -59,7 +59,7 @@ class Loader(data.Dataset):
             print("loading alphabet: " + alphabet)
             print("Total number of alphabet: " + str(len(os.listdir(path))))
             alphabet_path = os.path.join(path,alphabet)
-            print("Total number of character sets in "+alphabet+" is "+ str(len(os.path.listdir(alphabet_path))))
+            print("Total number of character sets in "+alphabet+" is "+ str(len(os.listdir(alphabet_path))))
             #every letter/category has it's own column in the array, so  load seperately
             sum = 0;
             for character in os.listdir(alphabet_path):
