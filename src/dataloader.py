@@ -13,7 +13,7 @@ from torchvision import transforms
 
 import sys
 import numpy as np
-from scipy.misc import imread
+from scipy.misc.pilutil import imread
 import pickle
 import os
 import matplotlib.pyplot as plt
