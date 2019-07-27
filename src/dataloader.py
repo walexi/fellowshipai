@@ -153,9 +153,9 @@ class Loader(data.Dataset):
                     # set data
                     print(i_idx)
                     print(t_idx)
-                    print(support_data[i_idx][t_idx])
-                    support_data[i_idx + c_idx * num_shots][t_idx] = self.transform(class_data_list[i_idx])
-                    support_label[i_idx + c_idx * num_shots][t_idx] = c_idx
+                    print(support_data.shape)
+                    support_data[i_idx + c_idx * num_shots] = self.transform(class_data_list[i_idx])
+                    support_label[i_idx + c_idx * num_shots] = c_idx
 
                 # load sample for query set
                 for i_idx in range(num_queries):
