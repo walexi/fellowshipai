@@ -108,7 +108,7 @@ class Loader(data.Dataset):
         return data
 
     def get_task_batch(self,
-                       num_tasks=1,
+                       num_tasks=5,
                        num_ways=20,
                        num_shots=1,
                        num_queries=1,
