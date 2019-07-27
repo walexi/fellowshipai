@@ -48,7 +48,7 @@ class Loader(data.Dataset):
         self.data = self.load_dataset()
 
     def _loadimgs(self):
-    #if data not already unzipped, unzip it.
+        #if data not already unzipped, unzip it.
         path = self.root + '/' + self.partition
         if not os.path.exists(path):
             print("unzipping")
@@ -108,7 +108,7 @@ class Loader(data.Dataset):
         return data
 
     def get_task_batch(self,
-                       num_tasks=5,
+                       num_tasks=1,
                        num_ways=20,
                        num_shots=1,
                        num_queries=1,
@@ -153,9 +153,10 @@ class Loader(data.Dataset):
                     # set data
                     print(i_idx)
                     print(t_idx)
-                    print(len(support_data))
-                    support_data[i_idx] = self.transform(class_data_list[i_idx])
-                    support_label[i_idx] = c_idx
+                    print(self.transform(class_data_list[i_idx]))
+                    print((self.transform(class_data_list[i_idx])).shape)
+                    support_data[i_idx + c_idx * num_shots] = self.transform(class_data_list[i_idx])
+                    support_label[i_idx + c_idx * num_shots] = c_idx
 
                 # load sample for query set
                 for i_idx in range(num_queries):
