@@ -151,10 +151,6 @@ class Loader(data.Dataset):
                 # load sample for support set
                 for i_idx in range(num_shots):
                     # set data
-                    print(i_idx)
-                    print(t_idx)
-                    # print(self.transform(class_data_list[i_idx]))
-                    print((self.transform(class_data_list[i_idx])).shape)
                     support_data[i_idx + c_idx * num_shots] = self.transform(class_data_list[i_idx])
                     support_label[i_idx + c_idx * num_shots] = c_idx
 
