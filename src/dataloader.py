@@ -160,9 +160,9 @@ class Loader(data.Dataset):
                     query_label[i_idx + c_idx * num_queries][t_idx] = c_idx
 
         # convert to tensor (num_tasks x (num_ways * (num_supports + num_queries)) x ...)
-        support_data = torch.stack([data.to(tt.arg.device) for data in support_data], 1)
-        support_label = torch.stack([torch.tensor(label).float().to(tt.arg.device) for label in support_label], 0)
+        support_data = torch.stack([torch.from_numpy(data).float().to(tt.arg.device) for data in support_data], 1)
+        support_label = torch.stack([torch.tensor(label).float().to(tt.arg.device) for label in support_label], 1)
         query_data = torch.stack([torch.from_numpy(data).float().to(tt.arg.device) for data in query_data], 1)
-        query_label = torch.stack([torch.tensor(label).float().to(tt.arg.device) for label in query_label], 0)
+        query_label = torch.stack([torch.tensor(label).float().to(tt.arg.device) for label in query_label], 1)
 
         return [support_data, support_label, query_data, query_label]
