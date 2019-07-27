@@ -49,7 +49,7 @@ class Loader(data.Dataset):
 
     def _loadimgs(self):
         #if data not already unzipped, unzip it.
-        set_dic = {'train': 'images_background', 'eval': 'images_evaluation'}
+        set_dic = {'train': 'images_background', 'val': 'images_evaluation'}
         path = self.root + '/' + set_dic[self.partition]
         if not os.path.exists(path):
             print("unzipping")
