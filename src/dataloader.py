@@ -149,7 +149,7 @@ class Loader(data.Dataset):
 
 
                 # load sample for support set
-                for i_idx in range(num_shots): 0 1
+                for i_idx in range(num_shots):
                     # set data
                     print(i_idx)
                     print(t_idx)
