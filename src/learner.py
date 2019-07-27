@@ -67,7 +67,7 @@ class Learner(object):
             [support_data,
              support_label,
              query_data,
-             query_label] = self.data_loader['train'].get_task_batch(num_tasks=tt.arg.meta_batch_size,
+             query_label] = self.data_loader['images_background'].get_task_batch(num_tasks=tt.arg.meta_batch_size,
                                                                      num_ways=tt.arg.num_ways_train,
                                                                      num_shots=tt.arg.num_shots_train,
                                                                      seed=iter + tt.arg.seed)
