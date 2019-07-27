@@ -75,7 +75,7 @@ class Learner(object):
             # set as single data
             full_data = torch.cat([support_data, query_data], 1)
             print(full_data.shape)
-            full_label = torch.cat([support_label, query_label], 0)
+            full_label = torch.cat([support_label, query_label], 1)
             print(full_label.shape)
             full_edge = self.label2edge(full_label)
             print(full_edge.shape)    
