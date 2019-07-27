@@ -168,6 +168,4 @@ class Loader(data.Dataset):
         query_data = torch.stack([torch.from_numpy(data).float().to(tt.arg.device) for data in query_data], 1)
         query_label = torch.stack([torch.from_numpy(label).float().to(tt.arg.device) for label in query_label], 1)
 
-        print(support_data.shape)
-        print(query_data.shape)
         return [support_data, support_label, query_data, query_label]
