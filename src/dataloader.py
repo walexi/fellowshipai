@@ -19,7 +19,7 @@ import argparse
 
 
 class Loader(data.Dataset):
-    def __init__(self, root, partition='images_background'):
+    def __init__(self, root, partition='train'):
         super(Loader, self).__init__()
         # set dataset information
         self.root = root
@@ -34,7 +34,7 @@ class Loader(data.Dataset):
         normalize = transforms.Normalize(mean=(mean_pix,), std=(std_pix,))
 
         # set transformer
-        if self.partition == 'images_background':
+        if self.partition == 'train':
             self.transform = transforms.Compose([transforms.RandomCrop(84, padding=4),
                                                  lambda x: np.asarray(x),
                                                  transforms.ToTensor(),
@@ -49,7 +49,8 @@ class Loader(data.Dataset):
 
     def _loadimgs(self):
         #if data not already unzipped, unzip it.
-        path = self.root + '/' + self.partition
+        set_dic = {'train': 'images_background', 'eval': 'images_evaluation'}
+        path = self.root + '/' + set_dic[self.partition]
         if not os.path.exists(path):
             print("unzipping")
             os.chdir(data_path)
