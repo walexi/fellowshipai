@@ -74,14 +74,14 @@ class Learner(object):
 
             # set as single data
             full_data = torch.cat([support_data, query_data], 1)
-            full_label = torch.cat([support_label, query_label], 1)
+            full_label = torch.cat([support_label, query_label], 0)
             full_edge = self.label2edge(full_label)
 
             # set init edge
             init_edge = full_edge.clone()  # batch_size x 2 x num_samples x num_samples
             init_edge[:, :, num_supports:, :] = 0.5
             init_edge[:, :, :, num_supports:] = 0.5
-            for i in range(num_queries):
+            for i in range(num_queries): #20
                 init_edge[:, 0, num_supports + i, num_supports + i] = 1.0
                 init_edge[:, 1, num_supports + i, num_supports + i] = 0.0
 
