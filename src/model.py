@@ -79,7 +79,7 @@ class EmbeddingImagenet(nn.Module):
         self.emb_size = emb_size
 
         # set layers
-        self.conv_1 = nn.Sequential(nn.Conv2d(in_channels=3,
+        self.conv_1 = nn.Sequential(nn.Conv2d(in_channels=1,
                                               out_channels=self.hidden,
                                               kernel_size=3,
                                               padding=1,
