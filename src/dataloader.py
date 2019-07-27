@@ -149,12 +149,13 @@ class Loader(data.Dataset):
 
 
                 # load sample for support set
-                for i_idx in range(num_shots):
+                for i_idx in range(num_shots): 0 1
                     # set data
                     print(i_idx)
                     print(t_idx)
-                    support_data[i_idx + c_idx * num_shots] = self.transform(class_data_list[i_idx])
-                    support_label[i_idx + c_idx * num_shots] = c_idx
+                    print(len(support_data))
+                    support_data[i_idx] = self.transform(class_data_list[i_idx])
+                    support_label[i_idx] = c_idx
 
                 # load sample for query set
                 for i_idx in range(num_queries):
