@@ -19,7 +19,7 @@ import argparse
 
 
 class Loader(data.Dataset):
-    def __init__(self, root, partition='omniglot_background'):
+    def __init__(self, root, partition='images_background'):
         super(Loader, self).__init__()
         # set dataset information
         self.root = root
@@ -34,7 +34,7 @@ class Loader(data.Dataset):
         normalize = transforms.Normalize(mean=(mean_pix,), std=(std_pix,))
 
         # set transformer
-        if self.partition == 'omniglot_background':
+        if self.partition == 'images_background':
             self.transform = transforms.Compose([transforms.RandomCrop(84, padding=4),
                                                  lambda x: np.asarray(x),
                                                  transforms.ToTensor(),

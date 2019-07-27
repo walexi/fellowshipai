@@ -172,7 +172,7 @@ class Learner(object):
 
             # evaluation
             if self.global_step % tt.arg.test_interval == 0:
-                val_acc = self.eval(partition='val')
+                val_acc = self.eval(partition='images_evaluation')
 
                 is_best = 0
 
@@ -192,7 +192,7 @@ class Learner(object):
 
             tt.log_step(global_step=self.global_step)
 
-    def eval(self, partition='test', log_flag=True):
+    def eval(self, partition='images_evaluation', log_flag=True):
         best_acc = 0
         # set edge mask (to distinguish support and query edges)
         num_supports = tt.arg.num_ways_test * tt.arg.num_shots_test
