@@ -19,10 +19,13 @@ dataset](https://github.com/brendenlake/omniglot).
 
 ## Existing solutions and current benchmarks
 - [Lake et. al](http://science.sciencemag.org/content/350/6266/1332) use Bayesian Program learning to achieve an error rate < 5% on the 20-way one-shot classification task. This method makes use of the stroke information. For a Siamese ConvNet they report an error of < 10%.
-- Recent SoTA is ~ 80% top-1, 90% top-5
+- [Jake Snell et. al](https://arxiv.org/abs/1703.05175) use Prototypical networks to learn a metric space in which classification can be performed by computing distances to prototype representations of each class. They report an accuracy rate of 96.0% on the 20-way one-shot classification task on the Omniglot dataset
+- [Vinyals et al](https://arxiv.org/pdf/1606.04080.pdf) use a differentiable nearest neighbours classifier (non-parametric approach). Accuracy of 93.8% and 93.2% were reported on the 20-way one-shot classification task on the Omniglot dataset respectively
+- [Alex Nichol et al](https://arxiv.org/pdf/1803.02999v3.pdf) use First-Order Meta-Learning Algorithms (an approximation to MAML obtained by ignoring second-order derivatives). Accuracy of 89.4%, and 89.43% were reported on the 20-way one-shot classification task on the Omniglot dataset using First-order MAML (using Transduction) and a new algorithm Reptile (using Transduction) respectively
 
 
 ## Reference Papers
+- [Edge-Labeling Graph Neural Network for Few-shot Learning, Bryan Perozzi et al](https://arxiv.org/pdf/1905.01436.pdf)
 ## Solution
 ## Possible improvements
 <!--
