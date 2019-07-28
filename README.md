@@ -17,6 +17,13 @@ dataset](https://github.com/brendenlake/omniglot).
 - Report one-shot classification (20-way) results using a meta learning approach like [MAML](https://arxiv.org/pdf/1703.03400.pdf).
 - Some basic exploration, 1-NN experiment and demo run from dataset authors using a distance metric are in 
 
+## One-shot Learning and Meta-learning
+- One-shot learning is the task of learning information about object categories from a single training example.
+- Each classification task T contains a support set S, a labeled set of input-label pairs, and a query set Q, an unlabeled set on which the learned classifier is evaluated.
+- For a 20-way 1-shot cassification, the support set S contains K=1 labeled sample for each of N=20 unique classes
+- Earlier work on one-shot learning is largely based on hand-engineered features
+- With meta-learning (also known as learn to learn), we hope to learn a common feature representation for all tasks in an end-to-end fashion
+
 ## Existing solutions and current benchmarks
 - [Lake et. al](http://science.sciencemag.org/content/350/6266/1332) use Bayesian Program learning to achieve an error rate < 5% on the 20-way one-shot classification task. This method makes use of the stroke information. For a Siamese ConvNet they report an error of < 10%.
 - [Jake Snell et. al](https://arxiv.org/abs/1703.05175) use Prototypical networks to learn a metric space in which classification can be performed by computing distances to prototype representations of each class. They report an accuracy rate of 96.0% on the 20-way one-shot classification task on the Omniglot dataset
@@ -25,6 +32,8 @@ dataset](https://github.com/brendenlake/omniglot).
 
 ## Solution
 - Edge-Labeling Graph Neural Network for Few-shot Learning
+- The parameters of the network are learned by episodic training
+- It can be easily extended to perform a transductive inference
 
 ## Possible improvements
 - Use another loss such as the [cycle loss](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.371.1288&rep=rep1&type=pdf).
