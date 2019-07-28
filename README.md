@@ -25,7 +25,7 @@ dataset](https://github.com/brendenlake/omniglot).
 
 
 ## Reference Papers
-- [Edge-Labeling Graph Neural Network for Few-shot Learning, Bryan Perozzi et al](https://arxiv.org/pdf/1905.01436.pdf)
+- [Edge-Labeling Graph Neural Network for Few-shot Learning](https://arxiv.org/pdf/1905.01436.pdf) Bryan Perozzi et al
 ## Solution
 ## Possible improvements
 <!--
