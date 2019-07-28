@@ -23,11 +23,14 @@ dataset](https://github.com/brendenlake/omniglot).
 - [Vinyals et al](https://arxiv.org/pdf/1606.04080.pdf) use a differentiable nearest neighbours classifier (non-parametric approach). Accuracy of 93.8% and 93.2% were reported on the 20-way one-shot classification task on the Omniglot dataset respectively
 - [Alex Nichol et al](https://arxiv.org/pdf/1803.02999v3.pdf) use First-Order Meta-Learning Algorithms (an approximation to MAML obtained by ignoring second-order derivatives). Accuracy of 89.4%, and 89.43% were reported on the 20-way one-shot classification task on the Omniglot dataset using First-order MAML (using Transduction) and a new algorithm Reptile (using Transduction) respectively
 
+## Solution
+- Edge-Labeling Graph Neural Network for Few-shot Learning
+
+## Possible improvements
+- Use another loss such as the [cycle loss](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.371.1288&rep=rep1&type=pdf).
 
 ## Reference Papers
 - [Edge-Labeling Graph Neural Network for Few-shot Learning](https://arxiv.org/pdf/1905.01436.pdf) Bryan Perozzi et al
-## Solution
-## Possible improvements
 <!--
 ## Challenge goals
 1. Problem solving ability - did you understand the problem correctly, 
