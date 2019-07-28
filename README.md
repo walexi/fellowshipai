@@ -32,7 +32,9 @@ dataset](https://github.com/brendenlake/omniglot).
 
 ## Solution
 - Edge-Labeling Graph Neural Network for Few-shot Learning
-- The parameters of the network are learned by episodic training
+- It consists of a number of layers where each layer consists of a node-update block and an edge-update block
+- The parameters of the network (for each layer) are learned by episodic training
+- Updates edge labels as it utilizes both intra-cluster similarity and inter-cluster dissimilarity
 - It can be easily extended to perform a transductive inference
 
 ## Possible improvements
